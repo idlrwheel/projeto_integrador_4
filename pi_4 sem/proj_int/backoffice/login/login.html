@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../login/style.css">
+    <title>Login Backoffice</title>
+</head>
+<body>
+        <div class="login-container">
+            <h2>Login Usuário</h2>
+            <form id="loginForm" action="/login" method="post">
+                <label for="email">Usuário:</label>
+                <input type="email" id="email" class="emailInput"/><br>
+                <label for="senha">Senha:</label>
+                <input type="password" id="password" class="passInput"/><br>
+                <input type="submit" value="OK" class="btnInput"/>
+                <input type="button" value="CANCELAR" class="btnInput"/>
+            </form>
+        </div>
+    
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', async(event)=>{
+                event.preventDefault();
+                const email = document.getElementById('email').value;
+                const senha = document.getElementById9=('password').value;
+
+                const senhaCript = await bcrypt.hash(senha, 10);
+
+                const response = await fetch('/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json'},
+                    body: JSON.stringify({email, senha: senhaCript})
+                });
+
+                if(response.ok){
+                    window.location.href = "/backoffice/home/home.html";
+                }else{
+                    alert("Login incorreto!");
+                }
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+</body>
+</html>

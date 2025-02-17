@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "League Spartan", serif;
+    }
+    
+    body{
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .login-container{
+        background-color: #F8F6F9;
+        padding: 10px;
+        width: 661px;
+        height: 304px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 4px #4F5D75;
+    }
+    
+    h2{
+        margin: 30px 30px 15px 15px;
+        color: #4F5D75;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+    }
+    
+    label{
+        display: block;
+        font-family: "Noto Sans";
+        color: #4F5D75;
+        text-align: left;
+        margin: 10px 30px 10px 70px;
+        font-size: 16px;
+    }
+    
+    .emailInput{
+        width: 70%;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        padding: 3px 20px;
+        font-family: "Noto Sans";
+        color: #4F5D75;
+    }
+    
+    .passInput{
+        width: 70%;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        padding: 3px 20px;
+        font-family: "Noto Sans";
+        color: #4F5D75;
+    }
+    
+    .btnInput{
+        width: 140px;
+        padding: 10px;
+        margin: 20px 20px;
+        background-color: #789197;
+        color: white;
+        font-family: "League Spartan";
+        font-weight: 500;
+        border:#4F5D75;
+        border-radius: 5px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    
+    .btnInput:active{
+        background-color: #8B6FA2;
+    }
